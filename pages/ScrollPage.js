@@ -12,8 +12,6 @@ export default class SwipePage extends React.Component {
         };
     }
 
-
-
     render() {
 
       const { navigate } = this.props.navigation;

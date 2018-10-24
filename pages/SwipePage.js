@@ -93,17 +93,6 @@ export default class SwipePage extends React.Component {
       const { navigate } = this.props.navigation;
 
       return (
-        <Button
-          title="Button Page"
-          accessibilityLabel="switchToButtons"
-          onPress={() =>
-            navigate("Button", { name: "buttonPageButton" })
-          }
-          style={{
-            flex: 1
-          }}
-        />,
-
         <GestureRecognizer
         onSwipe={(direction, state) => this.onSwipe(direction, state)}
         onSwipeUp={(state) => this.onSwipeUp(state)}
@@ -121,35 +110,35 @@ export default class SwipePage extends React.Component {
                     style={{
                         textAlign: "center",
                         display: this.state.displayWelcomeText
-                    }}>"Welcome to the swipe page, please swipe."</Text>
+                    }}>Welcome to the swipe page, please swipe.</Text>
 
                 <Text
                     accessibilityLabel="swipeUp"
                     style={{
                         textAlign: "center",
                         display: this.state.displaySwipeUp
-                }}>"You swiped up!"</Text>
+                }}>You swiped up!</Text>
 
                 <Text
                     accessibilityLabel="swipeRight"
                     style={{
                         textAlign: "center",
                         display: this.state.displaySwipeRight
-                }}>"You swiped right!"</Text>
+                }}>You swiped right!</Text>
 
                 <Text
                     accessibilityLabel="swipeDown"
                     style={{
                         textAlign: "center",
                         display: this.state.displaySwipeDown
-                }}>"You swiped down!"</Text>
+                }}>You swiped down!</Text>
 
                 <Text
                     accessibilityLabel="swipeLeft"
                     style={{
                         textAlign: "center",
                         display: this.state.displaySwipeLeft
-                }}>"You swiped left!"</Text>
+                }}>You swiped left!</Text>
             </View>
         {/* <Text>onSwipe callback received gesture: {this.state.gestureName}</Text> */}
       </GestureRecognizer>
