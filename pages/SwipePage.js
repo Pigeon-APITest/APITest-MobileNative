@@ -115,44 +115,52 @@ export default class SwipePage extends React.Component {
           flex: 1,
           backgroundColor: this.state.backgroundColor
         }}>
+            <View style={styles.textContainer}>
+                <Text
+                    accessibilityLabel="welcomeText"
+                    style={{
+                        textAlign: "center",
+                        display: this.state.displayWelcomeText
+                    }}>"Welcome to the swipe page, please swipe."</Text>
 
-            <Text
-                accessibilityLabel="welcomeText"
-                style={{
-                    textAlign: "center",
-                    display: this.state.displayWelcomeText
-                }}>"Welcome to the swipe page, please swipe."</Text>
+                <Text
+                    accessibilityLabel="swipeUp"
+                    style={{
+                        textAlign: "center",
+                        display: this.state.displaySwipeUp
+                }}>"You swiped up!"</Text>
 
-            <Text
-                accessibilityLabel="swipeUp"
-                style={{
-                    textAlign: "center",
-                    display: this.state.displaySwipeUp
-            }}>"You swiped up!"</Text>
+                <Text
+                    accessibilityLabel="swipeRight"
+                    style={{
+                        textAlign: "center",
+                        display: this.state.displaySwipeRight
+                }}>"You swiped right!"</Text>
 
-            <Text
-                accessibilityLabel="swipeRight"
-                style={{
-                    textAlign: "center",
-                    display: this.state.displaySwipeRight
-            }}>"You swiped right!"</Text>
+                <Text
+                    accessibilityLabel="swipeDown"
+                    style={{
+                        textAlign: "center",
+                        display: this.state.displaySwipeDown
+                }}>"You swiped down!"</Text>
 
-            <Text
-                accessibilityLabel="swipeDown"
-                style={{
-                    textAlign: "center",
-                    display: this.state.displaySwipeDown
-            }}>"You swiped down!"</Text>
-
-            <Text
-                accessibilityLabel="swipeLeft"
-                style={{
-                    textAlign: "center",
-                    display: this.state.displaySwipeLeft
-            }}>"You swiped left!"</Text>
+                <Text
+                    accessibilityLabel="swipeLeft"
+                    style={{
+                        textAlign: "center",
+                        display: this.state.displaySwipeLeft
+                }}>"You swiped left!"</Text>
+            </View>
         {/* <Text>onSwipe callback received gesture: {this.state.gestureName}</Text> */}
       </GestureRecognizer>
 
       );
     }
-  }  
+}
+
+const styles = StyleSheet.create({
+    textContainer: {
+        flex: 1,
+        justifyContent: "center",
+    }
+});
