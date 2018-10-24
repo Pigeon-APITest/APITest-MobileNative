@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "API-test",
+    "description": "This project is really great.",
+    "slug": "API-test",
+    "privacy": "public",
+    "sdkVersion": "30.0.0",
+    "platforms": ["android", "ios"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.soprasteria.apitest"
+    },
+    "android": {
+      "package": "com.soprasteria.apitest"
+    }
+  }
+}
