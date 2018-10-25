@@ -4,12 +4,27 @@ import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import * as Colour from "../settings/Colour";
 import * as Style from "../settings/Style";
 
+
+
 export default class SwipePage extends React.Component {
+
+    resetPage() {
+        this.setState({
+            backgroundColor: Colour.COLOUR_BACKGROUND,
+            displayWelcomeText: "flex",
+            displaySwipeUp: "none",
+            displaySwipeRight: "none",
+            displaySwipeDown: "none",
+            displaySwipeLeft: "none",
+        });
+    }
+
     static navigationOptions = {
       title: "Swipe Page",
       headerLeft: null,
       headerStyle: {
-        backgroundColor: Colour.COLOUR_HEADER
+        backgroundColor: Colour.COLOUR_HEADER,
+        height: 45,
       },
       headerTintColor: "white",
       headerTitleStyle:{
@@ -112,19 +127,26 @@ export default class SwipePage extends React.Component {
 
             <View style={Style.STYLES.navigationButtonsContainer}>
                 <View style={Style.STYLES.navigationButtonContainer}>
-                <Button title="Button Page"
-                        color={Colour.COLOUR_HEADER_BUTTON}
-                        accessibilityLabel="switchToButton"
-                        onPress={() => navigate("Button", { name: "buttonPageButton" })}
-                />
+                    <Button title="Button Page"
+                            color={Colour.COLOUR_HEADER_BUTTON}
+                            accessibilityLabel="switchToButton"
+                            onPress={() => {    this.resetPage()
+                                                navigate("Button", { name: "buttonPageButton" })}} />
                 </View>
 
                 <View style={Style.STYLES.navigationButtonContainer}>
-                <Button title="Scroll Page"
-                        color={Colour.COLOUR_HEADER_BUTTON}
-                        accessibilityLabel="switchToScroll"
-                        onPress={() => navigate("Scroll", { name: "scrollPageButton" })}
-                />
+                    <Button title="Swipe Page"
+                            color={Colour.COLOUR_HEADER_BUTTON_SELECTED}
+                            accessibilityLabel="switchToSwipe"
+                            onPress={() => this.resetPage()} />
+                </View>
+
+                <View style={Style.STYLES.navigationButtonContainer}>
+                    <Button title="Scroll Page"
+                            color={Colour.COLOUR_HEADER_BUTTON}
+                            accessibilityLabel="switchToScroll"
+                            onPress={() => {    this.resetPage()
+                                                navigate("Scroll", { name: "scrollPageButton" })}} />
                 </View>
             </View>
 

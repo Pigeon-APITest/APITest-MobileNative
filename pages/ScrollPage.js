@@ -8,7 +8,8 @@ export default class SwipePage extends React.Component {
       title: "Scroll Page",
       headerLeft: null,
       headerStyle: {
-        backgroundColor: Colour.COLOUR_HEADER
+        backgroundColor: Colour.COLOUR_HEADER,
+        height: 45,
       },
       headerTintColor: "white",
       headerTitleStyle:{
@@ -31,19 +32,24 @@ export default class SwipePage extends React.Component {
       return (
         <View style={Style.STYLES.navigationButtonsContainer}>
                 <View style={Style.STYLES.navigationButtonContainer}>
-                <Button title="Button Page"
-                        color={Colour.COLOUR_HEADER_BUTTON}
-                        accessibilityLabel="switchToButton"
-                        onPress={() => navigate("Button", { name: "buttonPageButton" })}
-                />
+                  <Button title="Button Page"
+                          color={Colour.COLOUR_HEADER_BUTTON}
+                          accessibilityLabel="switchToButton"
+                          onPress={() => navigate("Button", { name: "buttonPageButton" })} />
                 </View>
 
                 <View style={Style.STYLES.navigationButtonContainer}>
-                <Button title="Swipe Page"
-                        color={Colour.COLOUR_HEADER_BUTTON}
-                        accessibilityLabel="switchToSwipe"
-                        onPress={() => navigate("Swipe", { name: "swipePageButton" })}
-                />
+                  <Button title="Swipe Page"
+                          color={Colour.COLOUR_HEADER_BUTTON}
+                          accessibilityLabel="switchToSwipe"
+                          onPress={() => navigate("Swipe", { name: "swipePageButton" })} />
+                </View>
+
+                <View style={Style.STYLES.navigationButtonContainer}>
+                    <Button title="Scroll Page"
+                            color={Colour.COLOUR_HEADER_BUTTON_SELECTED}
+                            accessibilityLabel="switchToScroll"
+                            onPress={() => navigate("Scroll", { name: "scrollPageButton" })} />
                 </View>
         </View>
       );
