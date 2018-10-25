@@ -6,6 +6,7 @@ import * as Style from "../settings/Style";
 export default class SwipePage extends React.Component {
     static navigationOptions = {
       title: "Scroll Page",
+      headerLeft: null,
       headerStyle: {
         backgroundColor: Colour.COLOUR_HEADER
       },
@@ -14,7 +15,6 @@ export default class SwipePage extends React.Component {
         fontWeight: "normal",
         textAlign: "center",
         flex: 1,
-        marginRight: 76,
       },
     };
 
@@ -29,16 +29,23 @@ export default class SwipePage extends React.Component {
       const { navigate } = this.props.navigation;
 
       return (
-        <Button
-          title="Button Page"
-          accessibilityLabel="switchToButtons"
-          onPress={() =>
-            navigate("Button", { name: "buttonPageButton" })
-          }
-          style={{
-            flex: 1
-          }}
-        />
+        <View style={Style.STYLES.navigationButtonsContainer}>
+                <View style={Style.STYLES.navigationButtonContainer}>
+                <Button title="Button Page"
+                        color={Colour.COLOUR_HEADER_BUTTON}
+                        accessibilityLabel="switchToButton"
+                        onPress={() => navigate("Button", { name: "buttonPageButton" })}
+                />
+                </View>
+
+                <View style={Style.STYLES.navigationButtonContainer}>
+                <Button title="Swipe Page"
+                        color={Colour.COLOUR_HEADER_BUTTON}
+                        accessibilityLabel="switchToSwipe"
+                        onPress={() => navigate("Swipe", { name: "swipePageButton" })}
+                />
+                </View>
+        </View>
       );
     }
   }  

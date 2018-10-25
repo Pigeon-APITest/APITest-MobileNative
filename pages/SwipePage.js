@@ -7,6 +7,7 @@ import * as Style from "../settings/Style";
 export default class SwipePage extends React.Component {
     static navigationOptions = {
       title: "Swipe Page",
+      headerLeft: null,
       headerStyle: {
         backgroundColor: Colour.COLOUR_HEADER
       },
@@ -15,7 +16,6 @@ export default class SwipePage extends React.Component {
         fontWeight: "normal",
         textAlign: "center",
         flex: 1,
-        marginRight: 76,
       },
     };
 
@@ -24,7 +24,7 @@ export default class SwipePage extends React.Component {
         this.state = {
             swipeAnnouncer: "Please Swipe",
             gestureName: "none",
-            backgroundColor: "#ffff",
+            backgroundColor: Colour.COLOUR_BACKGROUND,
             displayWelcomeText: "flex",
             displaySwipeUp: "none",
             displaySwipeRight: "none",
@@ -105,55 +105,77 @@ export default class SwipePage extends React.Component {
       const { navigate } = this.props.navigation;
 
       return (
-        <GestureRecognizer
-        onSwipe={(direction, state) => this.onSwipe(direction, state)}
-        onSwipeUp={(state) => this.onSwipeUp(state)}
-        onSwipeDown={(state) => this.onSwipeDown(state)}
-        onSwipeLeft={(state) => this.onSwipeLeft(state)}
-        onSwipeRight={(state) => this.onSwipeRight(state)}
-        config={config}
-        style={{
-          flex: 1,
-          backgroundColor: this.state.backgroundColor
-        }}>
-            <View style={styles.textContainer}>
-                <Text
-                    accessibilityLabel="welcomeText"
-                    style={{
-                        textAlign: "center",
-                        display: this.state.displayWelcomeText
-                    }}>Welcome to the swipe page, please swipe.</Text>
+        <View style={{
+            flex: 1,
+            flexDirection: "column",
+            }}>
 
-                <Text
-                    accessibilityLabel="swipeUp"
-                    style={{
-                        textAlign: "center",
-                        display: this.state.displaySwipeUp
-                }}>You swiped up!</Text>
+            <View style={Style.STYLES.navigationButtonsContainer}>
+                <View style={Style.STYLES.navigationButtonContainer}>
+                <Button title="Button Page"
+                        color={Colour.COLOUR_HEADER_BUTTON}
+                        accessibilityLabel="switchToButton"
+                        onPress={() => navigate("Button", { name: "buttonPageButton" })}
+                />
+                </View>
 
-                <Text
-                    accessibilityLabel="swipeRight"
-                    style={{
-                        textAlign: "center",
-                        display: this.state.displaySwipeRight
-                }}>You swiped right!</Text>
-
-                <Text
-                    accessibilityLabel="swipeDown"
-                    style={{
-                        textAlign: "center",
-                        display: this.state.displaySwipeDown
-                }}>You swiped down!</Text>
-
-                <Text
-                    accessibilityLabel="swipeLeft"
-                    style={{
-                        textAlign: "center",
-                        display: this.state.displaySwipeLeft
-                }}>You swiped left!</Text>
+                <View style={Style.STYLES.navigationButtonContainer}>
+                <Button title="Scroll Page"
+                        color={Colour.COLOUR_HEADER_BUTTON}
+                        accessibilityLabel="switchToScroll"
+                        onPress={() => navigate("Scroll", { name: "scrollPageButton" })}
+                />
+                </View>
             </View>
-        {/* <Text>onSwipe callback received gesture: {this.state.gestureName}</Text> */}
-      </GestureRecognizer>
+
+            <GestureRecognizer  onSwipe={(direction, state) => this.onSwipe(direction, state)}
+                                onSwipeUp={(state) => this.onSwipeUp(state)}
+                                onSwipeDown={(state) => this.onSwipeDown(state)}
+                                onSwipeLeft={(state) => this.onSwipeLeft(state)}
+                                onSwipeRight={(state) => this.onSwipeRight(state)}
+                                config={config}
+                                style={{
+                                flex: 1,
+            backgroundColor: this.state.backgroundColor }}>
+                <View style={styles.textContainer}>
+                    <Text
+                        accessibilityLabel="welcomeText"
+                        style={{
+                            textAlign: "center",
+                            display: this.state.displayWelcomeText
+                        }}>Welcome to the swipe page, please swipe.</Text>
+
+                    <Text
+                        accessibilityLabel="swipeUp"
+                        style={{
+                            textAlign: "center",
+                            display: this.state.displaySwipeUp
+                    }}>You swiped up!</Text>
+
+                    <Text
+                        accessibilityLabel="swipeRight"
+                        style={{
+                            textAlign: "center",
+                            display: this.state.displaySwipeRight
+                    }}>You swiped right!</Text>
+
+                    <Text
+                        accessibilityLabel="swipeDown"
+                        style={{
+                            textAlign: "center",
+                            display: this.state.displaySwipeDown
+                    }}>You swiped down!</Text>
+
+                    <Text
+                        accessibilityLabel="swipeLeft"
+                        style={{
+                            textAlign: "center",
+                            display: this.state.displaySwipeLeft
+                    }}>You swiped left!</Text>
+                </View>
+            {/* <Text>onSwipe callback received gesture: {this.state.gestureName}</Text> */}
+        </GestureRecognizer>
+        </View>
 
       );
     }
