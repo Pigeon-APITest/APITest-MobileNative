@@ -1,10 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from "react-native";
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+import * as Colour from "../settings/Colour";
+import * as Style from "../settings/Style";
 
 export default class SwipePage extends React.Component {
     static navigationOptions = {
       title: "Swipe Page",
+      headerStyle: {
+        backgroundColor: Colour.COLOUR_HEADER
+      },
+      headerTintColor: "white",
+      headerTitleStyle:{
+        fontWeight: "normal",
+        textAlign: "center",
+        flex: 1,
+        marginRight: 76,
+      },
     };
 
     constructor(props) {
@@ -25,15 +37,15 @@ export default class SwipePage extends React.Component {
         this.setState({swipeAnnouncer: 'You swiped up!'});
     }
     
-      onSwipeDown(gestureState) {
+    onSwipeDown(gestureState) {
         this.setState({swipeAnnouncer: 'You swiped down!'});
     }
     
-      onSwipeLeft(gestureState) {
+    onSwipeLeft(gestureState) {
         this.setState({swipeAnnouncer: 'You swiped left!'});
     }
     
-      onSwipeRight(gestureState) {
+    onSwipeRight(gestureState) {
         this.setState({swipeAnnouncer: 'You swiped right!'});
     }
 
