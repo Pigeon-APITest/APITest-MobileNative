@@ -9,10 +9,9 @@ const styles = StyleSheet.create({
         borderTopWidth: 0.5,
         borderBottomWidth: 0.5,
     },
-    testButtonsContainer: {
+    testButtonsRow: {
       flexDirection: "row",
       justifyContent: "center",
-      height: "100%",
       backgroundColor: Colour.COLOUR_BACKGROUND,
     },
     navigationButtonContainer: {
@@ -22,7 +21,66 @@ const styles = StyleSheet.create({
     buttonContainer: {
         width: "40%",
         margin: 10,
+        justifyContent: "center",
     },
+    scrollContainer: {
+      margin: 10,
+      justifyContent: "center",
+  },
+    curvedTailArrow: {
+        backgroundColor: 'transparent',
+        overflow: 'visible',
+        width: 70,
+        height: 200
+      },
+      curvedTailArrowTriangle: {
+        backgroundColor: 'transparent',
+        // width: 0,
+        height: 0,
+        borderTopWidth: 50,
+        borderTopColor: 'transparent',
+        borderRightWidth: 50,
+        borderRightColor: Colour.COLOUR_HEADER,
+        borderStyle: 'solid',
+        transform: [
+          {rotate: '45deg'}
+        ],
+        position: 'absolute',
+        bottom: 90,
+        left: 10,
+        overflow: 'visible'
+      },
+      curvedTailArrowTail: {
+        backgroundColor: 'transparent',
+        position: 'absolute',
+        borderBottomColor: 'transparent',
+        borderLeftColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderBottomWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
+        borderTopWidth: 3,
+        borderTopColor: Colour.COLOUR_HEADER,
+        borderStyle: 'solid',
+        borderTopLeftRadius: 12,
+        top: 60,
+        left: 33.5,
+        width: 50,
+        height: 50,
+        transform: [
+          {rotate: '270deg'}
+        ]
+      },
+      circle: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        width: 100,
+        height: 100,
+        borderRadius: 100/2,
+        backgroundColor: Colour.COLOUR_GOAL,
+        marginBottom: 50,
+      },
 });
 
 module.exports = Object.freeze({
