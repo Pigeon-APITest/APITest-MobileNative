@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "API-test",
-    "description": "This project is really great.",
+    "description": "API tests for a native environment.",
     "slug": "API-test",
     "privacy": "public",
     "sdkVersion": "30.0.0",
