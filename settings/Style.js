@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
       },
       curvedTailArrowTriangle: {
         backgroundColor: 'transparent',
-        // width: 0,
         height: 0,
         borderTopWidth: 50,
         borderTopColor: 'transparent',

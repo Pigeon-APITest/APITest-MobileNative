@@ -195,7 +195,6 @@ export default class SwipePage extends React.Component {
                             display: this.state.displaySwipeLeft
                     }}>You swiped left!</Text>
                 </View>
-            {/* <Text>onSwipe callback received gesture: {this.state.gestureName}</Text> */}
         </GestureRecognizer>
         </View>
 
