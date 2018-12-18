@@ -5,7 +5,7 @@ Native app for testing Pigeon frameworks API's
 API testing app built using React Native and Expo.
 
 
-Build apk command:                "expo build:apk"
+Build apk command:                "expo build:android"
 
 Build ipa for simulator command:  "expo build:ios -t simulator"
 
